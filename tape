@@ -134,7 +134,7 @@ def parse_config_files(options):
     # set defaults
     config.add_section('server')
     config.add_section('proxies')
-    config.set('server', 'port', '8273')
+    config.set('server', 'port', str(DEFAULT_PORT))
     
     files = ['%s/.taperc' % os.environ['HOME'], '.taperc']
     if options.config:
