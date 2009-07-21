@@ -51,16 +51,7 @@ class DummyResource(static.Data):
 
 
 class ProxyResource(proxy.ReverseProxyResource):
-    """Wrapper around ReverseProxyResource to add redirect on base access."""
-    def getChild(self, path, request):
-        #if path == '':
-        #    return proxy.ReverseProxyResource(
-        #        self.host, self.port, '/')
-        return proxy.ReverseProxyResource.getChild(self, path, request)
-
-    def render(self, request):
-        return redirectTo(request.uri + '/', request)
-
+    pass
 
 class TapeResource(static.File):
     def __init__(self, config):
